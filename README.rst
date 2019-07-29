@@ -59,7 +59,8 @@ Methods
 * | モジュールは2.のgpio_in_pinで設定したピンに繋げる [1]_
 
 .. figure:: https://user-images.githubusercontent.com/53417955/62033778-b4e6bd00-b227-11e9-8b9e-0d77faa0e4f1.png
-   :scale: 30 %   
+   :scale: 30 % 
+   :width: 200 px
 
 4. リモコンの赤外線発信パターンを調べる
 ---------------------------------------
