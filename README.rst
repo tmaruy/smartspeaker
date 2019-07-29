@@ -32,7 +32,7 @@ Reference
 
 Methods
 -----------------
-1. | LIRCのインストール
+1. | ** LIRCのインストール **
    | Raspberry Piで赤外線受信を行うためにLIRC (Linux infrared remote control)をインストールします。
     
 .. code-block:: 
