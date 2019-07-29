@@ -89,6 +89,7 @@ Methods
    irsend LIST aircon ""
  
 .. figure:: https://user-images.githubusercontent.com/53417955/62032417-8fa47f80-b224-11e9-9df7-72f71798b13d.png
+   :scale: 30%
 
 7. シグナルを出力
 ---------------------------------------
@@ -114,4 +115,4 @@ Reference
 ===================
 
 
-.. [1] 図はhttp://fritzing.org/download/で作成
+.. [1] 図は`Fritzing <http://fritzing.org/download/>`__で作成
