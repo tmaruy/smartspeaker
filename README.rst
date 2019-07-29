@@ -54,16 +54,30 @@ Methods
 3. | 赤外線受信用モジュールをつなぐ
    | モジュールは2.のgpio_in_pinで設定したピンに繋げる
 
-4. | リモコンの発信パターンを学習
+4. | リモコンの赤外線発信パターンを調べる
    | 以下のコマンドを入力したのちに赤外線を照射。すると以下のように受信した信号が出力される
 
 .. code-block::
    
    sudo /etc/init.d/lirc stop
-   mode2 -d /dev/lirc0
+   mode2 -d /dev/lirc0 | tee signals/aircon/on  # signals/aircon/onにシグナルが出力される
    # ここで照射
 
 .. figure:: https://user-images.githubusercontent.com/53417955/62022857-1481a000-b209-11e9-8e3c-265de945eac4.png
 
-
+5. | 受信した信号を登録する
+   | mode2で出力したシグナルを./lirc/reformat_lirc_signals.pyで処理
+   | 出力ファイル lircd.confを/etc/lirc/に移動
+   
+6. | 登録したシグナルを確認
+   | lircd.confに登録されたシグナルの情報を確認する
+ 
+.. code-block::
+   
+   sudo /etc/init.d/lircd start
+   irsend LIST "" ""
+   irsend LIST aircon ""
+   
+   
+   
 
