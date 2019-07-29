@@ -115,4 +115,4 @@ Reference
 ===================
 
 
-.. [1] 図は`Fritzing <http://fritzing.org/download/>`__で作成
+.. [1] 図は `Fritzing <http://fritzing.org/download/>`__ で作成
