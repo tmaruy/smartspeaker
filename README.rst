@@ -88,7 +88,7 @@ Methods
    irsend LIST "" ""
    irsend LIST aircon ""
  
-.. figure:: https://user-images.githubusercontent.com/53417955/62032417-8fa47f80-b224-11e9-9df7-72f71798b13d.png
+.. image:: https://user-images.githubusercontent.com/53417955/62032417-8fa47f80-b224-11e9-9df7-72f71798b13d.png
    :scale: 30 %
 
 7. シグナルを出力
