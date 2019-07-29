@@ -25,12 +25,12 @@ Create smartspeaker with Raspberry Pi
 赤外線による操作
 -------------------------------------
 
-Reference
+参考
 ===================
 * `赤外線リモコンを使う <http://make.bcde.jp/raspberry-pi/%E8%B5%A4%E5%A4%96%E7%B7%9A%E3%83%AA%E3%83%A2%E3%82%B3%E3%83%B3%E3%82%92%E4%BD%BF%E3%81%86/#LIRCLinux_Infrared_Remote_Control>`__
 * `Raspberry pi 3をつかってLINEから赤外線リモコンを操作 <https://qiita.com/na59ri/items/aea452f2487a393537dd>`__
 
-Methods
+メモ
 ===================
 
 1. LIRCのインストール
@@ -101,16 +101,62 @@ Methods
 課題
 ===================
 * | 赤外線LEDのシグナルが弱い
+  | LEDの問題？
   | LEDキャップ？
-  | トランジスタ？
+  | 電流が弱い？トランジスタ？
 
 
 -------------------------------------
 携帯からの遠隔操作
 -------------------------------------
 
-Reference
+参考
 ===================
+* | `Blynk <https://blynk.io/en/getting-started>`__
+* | http://blog.livedoor.jp/victory7com/archives/48432885.html
+
+メモ
+===================
+
+1. Blynkを携帯にインストール
+-----------------------------
+* | App storeでインストール
+
+2. プロジェクトを作る
+-----------------------------
+* | 
+
+.. image:: https://user-images.githubusercontent.com/53417955/62045011-38f86f00-b23f-11e9-9888-11229af4dab8.png
+.. image:: https://user-images.githubusercontent.com/53417955/62045039-50375c80-b23f-11e9-9e32-86e5b5973e83.png
+
+
+3. Raspberry Pi側でBlynkをダウンロード
+--------------------------------------
+
+.. code-block::
+   
+   git clone https://github.com/blynkkk/blynk-library.git
+
+
+4. ./blynk-library/linux/main.cppをいじる
+------------------------------------------
+* | main.cppの関数BLYNK_WRITEを
+
+.. code-block:: c
+   
+   BLYNK_WRITE(V1){
+    char command[256] = "";
+    if(param[0] == 1){
+      printf("Aircon ON\n");
+      strcat(command, "irsend SEND_ONCE aircon on");
+    }else{
+      printf("Aircon OFF\n");
+      strcat(command, "irsend SEND_ONCE aircon off");
+    }
+    system(command);
+    }
+
+
 
 
 .. [1] 図は `Fritzing <http://fritzing.org/download/>`__ で作成
