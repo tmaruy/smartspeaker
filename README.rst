@@ -96,7 +96,8 @@ Create smartspeaker with Raspberry Pi
    
 .. code-block::
     
-   irsend SEND_ONCE aircon on
+   irsend SEND_ONCE aircon on  # エアコンオン
+   irsend SEND_ONCE aircon off # エアコンオフ
  
 課題
 ===================
@@ -124,11 +125,11 @@ Create smartspeaker with Raspberry Pi
 
 2. プロジェクトを作る
 -----------------------------
-* | 
+* | プロジェクトを作って適当にボタンなどを配置
+  | 出力をデジタルポートでなくバーチャルポート (e.g. V1, V2, ..) に設定
 
-.. image:: https://user-images.githubusercontent.com/53417955/62045011-38f86f00-b23f-11e9-9888-11229af4dab8.png
-.. image:: https://user-images.githubusercontent.com/53417955/62045039-50375c80-b23f-11e9-9e32-86e5b5973e83.png
-
+.. image:: https://user-images.githubusercontent.com/53417955/62045125-8674dc00-b23f-11e9-90a7-5435bdafbdc3.png
+.. image:: https://user-images.githubusercontent.com/53417955/62045091-73620c00-b23f-11e9-8857-e48a67542f01.png
 
 3. Raspberry Pi側でBlynkをダウンロード
 --------------------------------------
@@ -140,7 +141,9 @@ Create smartspeaker with Raspberry Pi
 
 4. ./blynk-library/linux/main.cppをいじる
 ------------------------------------------
-* | main.cppの関数BLYNK_WRITEを
+* | main.cppの関数BLYNK_WRITEをいじる
+  | 以下の関数はバーチャルポートV1に出力された時に実行される
+  | 関数の内部ではirsendでエアコンのオンとオフが指令される
 
 .. code-block:: c
    
@@ -156,6 +159,33 @@ Create smartspeaker with Raspberry Pi
     system(command);
     }
 
+5. ./blynk-library/linux/上でMake
+------------------------------------------
+* | blynkの実行ファイルができる
+
+.. code-block::
+   
+   make all target=raspberry
+
+6. blynkをRaspberry Piで立ち上げる
+------------------------------------------
+* | スマホアプリ側のトークンが必要
+
+.. code-block::
+   
+   sudo ./blynk --token=yz6***************
+
+7. スマホでRaspberry Piをコントロール
+------------------------------------------
+* | 便利！
+
+-------------------------------------
+音声でコントロール
+-------------------------------------
+
+参考
+===================
+* | `Snowboy <https://qiita.com/mayfair/items/d16d092328e60f0cac6b>`__
 
 
 
