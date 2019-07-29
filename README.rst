@@ -27,13 +27,15 @@ Methods
 1. | LIRCのインストール
    | Raspberry Piで赤外線受信を行うためにLIRC (Linux infrared remote control)をインストールします。
     
+:: code-block::
    sudo apt-get install lirc
 
 2. | GPIOの設定
    | 赤外線受信モジュールと送信モジュールのピンを設定
    | ファイル`/boot/config.txt`に以下の内容を追加して再起動
    | gpio_in_pinが受信、gpio_out_pinが送信用のピンとして設定される
-      
+  
+:: code-block::
    #RemoteController
    dtoverlay=lirc-rpi
    dtparam=gpio_in_pin=22
