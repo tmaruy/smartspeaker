@@ -53,6 +53,8 @@ Methods
    
 3. | 赤外線受信用モジュールをつなぐ
    | モジュールは2.のgpio_in_pinで設定したピンに繋げる
+   
+   
 
 4. | リモコンの赤外線発信パターンを調べる
    | 以下のコマンドを入力したのちに赤外線を照射。すると以下のように受信した信号が出力される
@@ -77,7 +79,20 @@ Methods
    sudo /etc/init.d/lircd start
    irsend LIST "" ""
    irsend LIST aircon ""
+ 
+.. figure:: https://user-images.githubusercontent.com/53417955/62032417-8fa47f80-b224-11e9-9df7-72f71798b13d.png
+
+7. | シグナルを出力
+   | 以下のコマンドで登録したシグナルを出力することができる
+   | 赤外線LEDを2.のgpio_out_pinで設定したピンに繋げる
    
+.. code-block::
+    
+   irsend SEND_ONCE aircon on
+ 
+課題
+-----------------
+* | 赤外線LEDのシグナルが弱い
    
    
 
