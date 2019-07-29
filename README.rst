@@ -59,7 +59,7 @@ Methods
 * | モジュールは2.のgpio_in_pinで設定したピンに繋げる [1]_
 
 .. figure:: https://user-images.githubusercontent.com/53417955/62033778-b4e6bd00-b227-11e9-8b9e-0d77faa0e4f1.png
-   
+   :scale: 30 %   
 
 4. リモコンの赤外線発信パターンを調べる
 ---------------------------------------
@@ -89,7 +89,6 @@ Methods
    irsend LIST aircon ""
  
 .. image:: https://user-images.githubusercontent.com/53417955/62032417-8fa47f80-b224-11e9-9df7-72f71798b13d.png
-   :scale: 30 %
 
 7. シグナルを出力
 ---------------------------------------
